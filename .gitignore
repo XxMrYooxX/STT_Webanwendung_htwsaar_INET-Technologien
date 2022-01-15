@@ -74,4 +74,4 @@ typings/
 
 # FuseBox cache
 .fusebox/
-models/model_de.pb
+models/deepspeech/model_de.pb
