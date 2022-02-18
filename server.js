@@ -9,7 +9,7 @@ app.use("/api", stt)
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile('views/index.html')
 })
 
 app.listen(port, () => {

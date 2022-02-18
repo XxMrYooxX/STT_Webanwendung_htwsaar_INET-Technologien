@@ -3,7 +3,6 @@ const multer = require('multer')
 var path = require('path')
 
 const appRouter = express.Router()
-const multer = multer();
 
 var deepspeech = require("deepspeech")
 
