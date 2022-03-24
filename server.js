@@ -5,11 +5,12 @@ const port = 3000
 var stt = require("./api/stt")
 
 app.use("/api", stt)
+app.use(express.static('./views/stt_main/assets'))
 
 
 
 app.get('/', (req, res) => {
-  res.sendFile('views/index.html')
+  res.sendFile(__dirname + '/views/stt_main/index.html')
 })
 
 app.listen(port, () => {
