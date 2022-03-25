@@ -4,13 +4,33 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TTS Engine</title>
+        <title>STT Engine - KIB-INET Projekt</title>
         <!-- Google web fonts -->
         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
         <!-- The main CSS file -->
         <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <h1 style="text-align: center;">STT Engine - KIB-INET Projekt</h1>
+        
+        <br></br>
+
+        <p style="text-align: center;">
+            <strong> Speech to Text Engine zum automatisierten Erstellen von Transskripts von Audio-Aufnahmen.</strong> <br>
+            Upload einer unterstützten Audio-File über den <b>Browse</b> Button. <br>
+            Der von Deepspeech erkannte Text wird in unten stehende Textbox ausgegeben. <br>
+
+        </p>
+        <br></br>
+        <div style="background-color: aqua; padding: 5%; margin-left: 10%; margin-right: 10%; border-radius: 10px; border-color: black;">
+            <strong>Akzeptierte Formate / Codecs: </strong>
+            <ul>
+                <li>WAV Audio File</li>
+                <li>16 bit</li>
+                <li>16KHz MONO</li>
+            </ul>
+        </div>
+
 
         <form id="upload"  method="post" enctype="multipart/form-data" action="/api/stt">
             <div id="drop">
@@ -19,7 +39,10 @@
             </div>
         </form> 
 
-        <textarea name="outputTextBox" cols="100"></textarea>
+        <div class="outputTextBox">
+            <textarea name="outputTextBox" cols="100" readonly=""></textarea>
+        </div>
+        
 
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
@@ -27,4 +50,11 @@
         <script src="js/main.js"></script>
         <script src="js/script.js"></script>
     </body>
+
+    <footer style="text-align: center;">
+        <small>
+            &copy; Marcel Hesselbach (3787974) & Julian Müller (xx) <br>
+            2016-2020 Mozilla Corporation, 2020 DeepSpeech authors Revision bfccca32
+        </small>
+    </footer>
 </html>
