@@ -1,10 +1,17 @@
-FROM node:14.19.1-alpine3.15
+FROM node:14.18.3-alpine
+
+RUN apk update && apk add --no-cache libc6-compat gcompat 
 
 RUN mkdir node
-COPY . ./node
+
 WORKDIR ./node/
 
+COPY package*.json .
+
+
 RUN npm install 
+
+COPY . .
 
 EXPOSE 3000
 
