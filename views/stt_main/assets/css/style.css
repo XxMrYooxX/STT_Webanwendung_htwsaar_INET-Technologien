@@ -1,3 +1,10 @@
+/**
+ * Projekt: Abgabe KIB-INET
+ * Projektbeteiligte: Julian Müller (3818160) & Marcel Hesselbach (3787974)
+ *
+*/
+
+
 /*-------------------------
     Reset
 --------------------------*/
@@ -14,11 +21,10 @@
 
 
 html{
-    background-color:#ebebec;
-
-    background-image:-webkit-radial-gradient(center, #ebebec, #b4b4b4);
-    background-image:-moz-radial-gradient(center, #ebebec, #b4b4b4);
-    background-image:radial-gradient(center, #ebebec, #b4b4b4);
+    background-color:#000000;
+    background-image:-webkit-radial-gradient(center, #353535, #000000);
+    background-image:-moz-radial-gradient(center, #353535, #000000);
+    background-image:radial-gradient(center, #353535, #000000);
 
     min-height:900px;
 }
@@ -47,6 +53,77 @@ div.outputTextBox{
     height: auto;
     /*width: 40%;*/
     grid-auto-rows: auto;
+}
+
+div.accepted_formats{
+    background-color: #373a3d;
+    padding: 5%;
+    margin-left: 10%;
+    margin-right: 10%; 
+    border-radius: 10px; 
+    border-color: black;
+}
+
+#page_title{
+    text-align: center;
+    color: white;
+}
+
+.page_info{
+    text-align: center;
+    color: white;
+}
+
+#format_listing{
+    color: white;
+}
+
+#outputTextBox{
+    color: white;
+    background-color: #373a3d;
+
+}
+
+#credit_footer{
+    text-align: center;
+}
+
+#header_2{
+    color: white;
+    text-align: center;
+}
+
+#voiceSelector{
+    text-align: center;
+}
+
+/*----------------------------
+    TTS
+-----------------------------*/
+#vpr { 
+    padding: 30px 10px; 
+    text-align: center;
+    margin: auto;
+} 
+.buttons{ 
+    background-color:#007a96;
+    padding:12px 36px;
+    color:#fff;
+    font-size:14px;
+    border-radius:2px;
+    cursor:pointer;
+    display:inline-block;
+    line-height:1;
+    
+}
+div.buttoncontainer{
+    margin: auto;
+    width: max-content;
+    padding: 10px;
+}
+
+#voiceSelector{
+    color: white;
 }
 
 /*----------------------------
@@ -87,4 +164,90 @@ div.outputTextBox{
 
 #drop input{
     display:none;
+}
+
+/*----------------------------
+    Spinner
+-----------------------------*/
+.spin-container-overlay {
+    top: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color:#000000;
+    background-image:-webkit-radial-gradient(center, #353535, #000000);
+    background-image:-moz-radial-gradient(center, #353535, #000000);
+    background-image:radial-gradient(center, #353535, #000000);
+    position: absolute;
+    z-index: 999; /*gibt ebene an */
+}
+.spin-container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+.spin {
+    border: 3px solid #0D4B9F;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader2 {
+    border: 3px solid #E0EDFF;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    top: -216px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader3 {
+    border: 3px solid #005CDC;
+    width: 240px;
+    height: 240px;
+    position: relative;
+    top: -452px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader4 {
+    border: 3px solid #94B6E5;
+    width: 260px;
+    height: 260px;
+    position: relative;
+    top: -708px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotateZ(-360deg)
+    }
+    100% {
+        transform: rotateZ(0deg)
+    }
+}
+@keyframes rotate2 {
+    0% {
+        transform: rotateZ(360deg)
+    }
+    100% {
+        transform: rotateZ(0deg)
+    }
+}
+#text {
+    color: #D6E3F6;
+    font-family: Arial;
+    font-size: 15px;
+    position: relative;
+    top: -857px;
 }

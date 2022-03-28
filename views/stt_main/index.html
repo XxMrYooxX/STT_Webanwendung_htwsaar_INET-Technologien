@@ -1,3 +1,9 @@
+<!--
+ * Projekt: Abgabe KIB-INET
+ * Projektbeteiligte: Julian Müller (3818160) & Marcel Hesselbach (3787974)
+ *
+* -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,21 +16,24 @@
         <!-- The main CSS file -->
         <link href="css/style.css" rel="stylesheet" />
     </head>
+
     <body>
-        <h1 style="text-align: center;">STT Engine - KIB-INET Projekt</h1>
+        <h1 id="page_title">STT Engine - KIB-INET Projekt</h1>
         
         <br></br>
+        <h2 id="header_2">Speech to Text Funktion mittels Mozilla Deepspeech</h2>
 
-        <p style="text-align: center;">
+        <p class="page_info" id="page_info">
             <strong> Speech to Text Engine zum automatisierten Erstellen von Transskripts von Audio-Aufnahmen.</strong> <br>
             Upload einer unterstützten Audio-File über den <b>Browse</b> Button. <br>
             Der von Deepspeech erkannte Text wird in unten stehende Textbox ausgegeben. <br>
-
         </p>
+
         <br></br>
-        <div style="background-color: aqua; padding: 5%; margin-left: 10%; margin-right: 10%; border-radius: 10px; border-color: black;">
-            <strong>Akzeptierte Formate / Codecs: </strong>
-            <ul>
+
+        <div class="accepted_formats" id="accepted_formats">
+            <strong style="color: white;">Akzeptierte Formate / Codecs: </strong>
+            <ul id="format_listing">
                 <li>WAV Audio File</li>
                 <li>16 bit</li>
                 <li>16KHz MONO</li>
@@ -33,27 +42,65 @@
 
 
         <form id="upload"  method="post" enctype="multipart/form-data" action="/api/stt">
-            <div id="drop">
+            <div id="drop" ondrop="dropupload(event)">
                 <a>Browse</a>
                 <input type="file" name="sttfile" id="apply" accept="audio/wav" />
             </div>
         </form> 
 
+        <div class="spin-container-overlay" id="spin-container-overlay">
+            <div class="spin-container">
+                <div class="spin" id="loader"></div>
+                <div class="spin" id="loader2"></div>
+                <div class="spin" id="loader3"></div>
+                <div class="spin" id="loader4"></div>
+                <span id="text">Verarbeite Audiodatei...</span>
+            </div>
+        </div>
+
         <div class="outputTextBox">
-            <textarea name="outputTextBox" cols="100" readonly=""></textarea>
+            <textarea name="outputTextBox" id="outputTextBox" cols="100"></textarea>
+        </div>
+
+        <br></br>
+        
+        <h2 id="header_2">Vorlesefunktion mittels Web Speech API synthesizer</h2>
+
+        <p class="page_info" id="page_info">
+            <strong>Text to Speech Funktion um Text aus Textbox mittels Web Speech API zu synthetisieren.</strong><br>
+        </p>
+        <div id="voiceSelector"> 
+            <h3> Auswahl Sprachstil WebSpeech API </h3> 
+            <select id="voices"> 
+                <option> option 1 </option> 
+            </select> 
+        </div> 
+        
+        <div class="vpr" id="vpr"> 
+            <h5> Lautstärke </h5> 
+            <input type="range" min="0" max="1" value="0.5" step="0.1" id="volume" /> 
+            <span id="vol-label">0.5</span> 
+        </div> 
+        
+        <div class="buttoncontainer">
+            <button class="buttons" id="speak"> Speak </button> 
+            <button class="buttons" id="pause"> Pause </button> 
+            <button class="buttons" id="resume"> Resume </button> 
+            <button class="buttons" id="cancel"> Cancel </button>
         </div>
         
+
 
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
         <!-- Our main JS file -->
         <script src="js/main.js"></script>
-        <script src="js/script.js"></script>
+        
     </body>
 
-    <footer style="text-align: center;">
+    <footer id="credit_footer">
         <small>
-            &copy; Marcel Hesselbach (3787974) & Julian Müller (xx) <br>
+            &copy; Marcel Hesselbach (3787974) & Julian Müller (3818160) <br>
             2016-2020 Mozilla Corporation, 2020 DeepSpeech authors Revision bfccca32
         </small>
     </footer>
