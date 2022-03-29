@@ -1,6 +1,6 @@
-FROM node:14.18.3-alpine
+FROM node:14-bullseye
 
-RUN apk update && apk add --no-cache libc6-compat gcompat 
+
 
 RUN mkdir node
 
